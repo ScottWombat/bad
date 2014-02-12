@@ -1,0 +1,21 @@
+{
+  	"name": "mystore",
+	"version": "0.0.1",
+	"main": "server/server.js",
+    "private": true,
+    "dependencies": {
+    	"requirejs": "latest",
+    	 "express": "~3.3.4"
+    },
+    "devDependencies": {
+    	 "mocha": "latest",
+  		 "chai": "latest",
+     	 "grunt": "0.4.x",
+         "grunt-exec": "0.4.x",
+         "grunt-cli": "0.1.x"
+    },
+    "engines": {
+    	"node": "0.10.25",
+    	"npm": "1.3.x"
+     }
+}

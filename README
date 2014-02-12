@@ -1,0 +1,7 @@
+ In order to build the application 
+Step 1: Install Node.js
+Step 2: Launch Node.js Command Prompt
+Step 3: Traverse the source code directory and install the node Requirejs package using the command 'npm install requirejs'
+Step 4: This installs the node package for require.js
+Step 5: Then compile using the node command 'node r.js -o app\js\build.js'
+Step 6: This ensures that the code is compiled into one .js file which is minified.

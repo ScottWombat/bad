@@ -1,0 +1,20 @@
+#nav {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#nav li {
+	display: inline;
+}
+
+#nav  li a:before{isplay:inline-block; content: "|"; clear: both; height: 0; color:#444; font-size:11px; padding-left:70px; position:absolute; left:-6px;}
+
+
+#nav  a {
+	display: inline-block;
+	padding: 0px 10px;
+}
+#nav  a:hover{color:#D45C93;}
+
