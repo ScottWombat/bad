@@ -1,0 +1,13 @@
+{{#session 'logged_in'}}
+Welcome back! {{email}}
+<a class='logoutMenu' href="#logout">Logout</a> | 
+{{else}}
+<a class='loginMenu' href="#login">Login</a> |
+{{/session}}
+<a class='wishlistMenu' href="#">{{wishlist}}</a> |
+<a class='giftcardsMenu' href="#">{{giftcards}}</a> |
+<a class='clearanceMenu' href="#">{{clearance}}</a> |
+<a class='myaccountMenu' href="#">{{myaccount}}</a> |
+<a class='checkoutMenu' href="#">{{checkout}}</a> |
+<a class='contactusMenu' href="#">{{contactus}}</a> |
+<a class='aboutMenu' href="#about">{{about}}</a> 

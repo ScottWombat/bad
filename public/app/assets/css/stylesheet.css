@@ -40,40 +40,27 @@ label {cursor: pointer;}
 #header #logo {float:left; margin:25px 10px 0px 0px; }
 
 /********** Language & Currency **********/
-#language, #currency{float:left; margin:0 0px; cursor:default; color:#444; text-decoration:none; text-transform:capitalize; position:relative; z-index:1015; line-height:30px; }
-#language ul, #currency ul{ display:none; position:absolute; top:30px; left:0; background:#fff; box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25); z-index:1013; padding:10px; }
-#language ul li, #currency ul li{ display:block; width:120px; line-height:18px; padding:2px 0;}
-#language ul li a, #currency ul li a{display:block;}
-#language ul li a b, #currency ul li a b{cursor:default; display:block;}
-#language ul li a:hover, #currency ul li a:hover{color:#D45C93;}
+#language,#currency{float:left; margin:0 0px; cursor:default; color:#444; text-decoration:none; text-transform:capitalize; 
+position:relative; z-index:1015; line-height:30px; }
+#language ul,#currency ul{ display:none; position:absolute; top:30px; left:0; background:#fff; box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25); 
+z-index:1013; padding:10px; }
+#language span,#currency span{ position:relative; display:block;  padding:0 10px 0 10px; z-index:1014; -webkit-transition: all 0.8s ease-
+in-out; -moz-transition: all 0.8s ease-in-out; -o-transition: all 0.8s ease-in-out; -ms-transition: all 0.8s ease-in-out; transition: all 
+0.8s ease-in-out;}
+#language span b,#currency span b{background:url(../image/bullet-d.png) right center no-repeat; padding:0 12px 0 0px;}
+#language:hover span,#currency:hover span{background:#fff; -webkit-transition: all 0.1s ease-in-out; -moz-transition: all 0.1s ease-in-out; 
+-o-transition: all 0.1s ease-in-out; -ms-transition: all 0.1s ease-in-out; transition: all 0.1s ease-in-out;}
+#language:hover,#currency:hover{box-shadow:0 5px 10px 0 rgba(0, 0, 0, 0.25);}
+#language:hover ul {display:block; position:absolute; width:100px;top:30px; left:0; background:#fff; box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25)}
+#currency:hover ul{display:block; position:absolute; width:140px;top:30px; left:0; background:#fff; box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25)}
 
-#language span, #currency span{ position:relative; display:block;  padding:0 10px 0 10px; z-index:1014; -webkit-transition: all 0.8s ease-in-out; -moz-transition: all 0.8s ease-in-out; -o-transition: all 0.8s ease-in-out; -ms-transition: all 0.8s ease-in-out; transition: all 0.8s ease-in-out;}
-#language span b, #currency span b{background:url(./../../assets/image/bullet-d.png) right center no-repeat; padding:0 12px 0 0px;  z-index: 30;}
+#language a:hover,#currency a:hover{color:#D45C93;}
 
-
-
-#language:hover span, #currency:hover span{background:#fff; -webkit-transition: all 0.1s ease-in-out; -moz-transition: all 0.1s ease-in-out; -o-transition: all 0.1s ease-in-out; -ms-transition: all 0.1s ease-in-out; transition: all 0.1s ease-in-out;}
-#language:hover, #currency:hover{box-shadow:0 5px 10px 0 rgba(0, 0, 0, 0.25);}
-#language img {cursor: pointer; margin-right:3px; }
-#currency:hover, #language:hover { color:#d45c93;}
-#currency a b{color: #000; text-decoration: none; }
-
-/********** Top Links **********
+/********** Top Links **********/
 #header .links { position: relative; float:right; line-height:30px; margin-right:-10px;}
 #header .links a {display: inline-block; padding:0px 10px; color: #444;  text-decoration: none; font-size:12px; position:relative;}
 #header .links a + a:before{display:inline-block; content: "|"; clear: both; height: 0; color:#444; font-size:11px; padding-left:12px; position:absolute; left:-15px;}
 #header .links a:hover{color:#D45C93;}
-*/
-#header .links { position: relative; float:right; line-height:30px; margin-right:-10px;}
-
-/*
-#header .links ul{margin: 0;padding: 0;list-style-type: none;text-align: center;}
-#header .link ul li { display: inline; }
-#header .links ul li a {display: inline-block; padding:0px 10px; color: #444;  text-decoration: none; font-size:12px; position:relative;}
-#header .links ul li  a + a:before{display:inline-block; content: "|"; clear: both; height: 0; color:#444; font-size:11px; padding-left:12px; position:absolute; left:-15px;}
-#header .links ul li  a:hover{color:#D45C93;}
-*/
-
 #header #welcome {color: #999999; float:left;}
 
 /********** Mini Cart  ***********/
@@ -81,7 +68,7 @@ label {cursor: pointer;}
 #header #cart .heading {padding:0 0px 0 0px; position: relative;}
 #header #cart .heading h4 { background:#d45c93; width:32px; height:32px; float:left; margin:4px 0px 0 0; padding:0;  z-index:1012; position:relative;}
 #header #cart .heading a { text-decoration: none; font-size:14px; height:36px; color:#444; display:inline-block; background:#fff; z-index:1012; position:relative; padding:0 7px 0 2px;}
-#header #cart .heading a span { background:url('./../../assets/image/bullet-d.png') right 11px no-repeat; padding-right: 12px; display:inline-block; margin-top:5px; }
+#header #cart .heading a span { background:url('../image/bullet-d.png') right 11px no-repeat; padding-right: 12px; display:inline-block; margin-top:5px; }
 #header #cart .content { clear: both; display:none; position:absolute; padding:8px; min-height: 150px; z-index:1011; background: #FFF; width:350px; right:0; top:35px; box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25); -moz-box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25); -webkit-box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25);}
 #header #cart.active .heading{  box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25); }
 #header #cart.active .content { display: block; }
@@ -130,49 +117,42 @@ label {cursor: pointer;}
 /********** Menu **********/
 #menu > span, .m-menu{display:none;}
 #menu {background:#222; margin:15px 0px; height:40px; padding:0px 0px 0px 3px;}
-#menu > ul > li.home { margin:0 0 0 0px; }
-#menu > ul > li.home a { display:block; height:35px!important; line-height:35px!important; padding:5px 5px 0 5px!important; }
-#menu > ul > li.home a span { background:url(../image/home-icon.png) center center no-repeat; display:block; width:30px; height:30px; text-indent:-9999px;}
+#menu > div > ul > li.home { margin:0 0 0 0px; }
+#menu > div > ul > li.home a { display:block; height:35px!important; line-height:35px!important; padding:5px 5px 0 5px!important; }
+#menu > div > ul > li.home a span { background:url(../image/home-icon.png) center center no-repeat; display:block; width:30px; height:30px; text-indent:-9999px;}
 
-#menu ul { list-style: none; margin: 0; padding:0 0 0 2px;}
-#menu > ul > li { position: relative; float: left; z-index:1010; padding:0px; }
-#menu > ul > li > a { font-size:12px; color: #fff; line-height:40px; text-decoration: none; display: block; padding:0px 10px 0px 10px; z-index: 1009; position: relative; font-weight:bold; text-transform:uppercase;}
-#menu > ul > li:hover > a {color:#fff; background:#d45c93; }
-#menu > ul > li > div { display: none; background:#fff; position:absolute; z-index:1008; padding:10px; border-top:2px solid #d45c93; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);}
-#menu > ul > li:hover > div.custom_block{display:table;}
-#menu > ul > li:hover > div.custom_block ul{display:table-cell;}
+#menu > div ul { list-style: none; margin: 0; padding:0 0 0 2px;}
+#menu > div > ul > li { position: relative; float: left; z-index:1010; padding:0px; }
+#menu > div > ul > li > a { font-size:12px; color: #fff; line-height:40px; text-decoration: none; display: block; padding:0px 10px 0px 10px; z-index: 1009; position: relative; font-weight:bold; text-transform:uppercase;}
+#menu > div > ul > li:hover > a {color:#fff; background:#d45c93; }
+#menu > div > ul > li > div { display: none; background:#fff; position:absolute; z-index:1008; padding:10px; border-top:2px solid #d45c93; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);}
+#menu > div > ul > li:hover > div.custom_block{display:table;}
+#menu > div > ul > li:hover > div.custom_block ul{display:table-cell;}
 
-#menu > ul > li > div > ul { display: table-cell; }
+#menu > div > ul > li > div > ul { display: table-cell; }
+#menu > div > ul > li.categories_hor > div { display: none; background:#fff; min-width:400px; position:absolute; z-index:1008; padding:10px 10px 0px 10px; border-top:2px solid #d45c93; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);}
+#menu > div > ul > li.categories_hor > div > .column {position:relative; display:inline-block; width:160px; margin:0 15px 15px 0px;}
 
-#menu > ul > li.categories_hor > div { display: none; background:#fff; min-width:895px; position:absolute; z-index:1008; padding:10px 10px 0px 10px; border-top:2px solid #d45c93; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);}
 
-#menu > ul > li.categories_hor > div > .column {position:relative; display:inline-block; width:160px; margin:0 15px 15px 0px;}
-#menu > ul > li > div > ul{position:relative; width:160px;}
-#menu > ul > li.categories_hor > div > .column + .column, #menu > ul > li > div > ul li + li{}
-#menu > ul > li.categories_hor > div > .column > a{font-weight:bold; font-size:13px; border-bottom:1px solid #ddd; margin-bottom:5px;}
-#menu > ul > li.categories_hor > div > .column a, #menu > ul > li > div > ul li a{padding:4px 0; display:block; }
-#menu > ul > li > div > ul li a{font-size:12px;}
-#menu > ul > li.categories_hor > div > .column:hover > a{color:#d45c93;}
-#menu > ul > li.categories_hor > div > .column > div{display:block;}
-#menu > ul > li.categories_hor > div > .column:hover div{display:table; }
-#menu > ul > li.categories_hor > div > .column > div ul{display:table; padding:0;}
-#menu > ul > li.categories_hor > div > .column > div ul li + li{}
+#menu > div > ul > li > div > ul{position:relative; width:160px;}
+#menu > div > ul > li.categories_hor > div > .column + .column, #menu > div > ul > li > div > ul li + li{}
+#menu > div > ul > li.categories_hor > div > .column > a{font-weight:bold; font-size:13px; border-bottom:1px solid #ddd; margin-bottom:5px;}
+#menu > div > ul > li.categories_hor > div > .column a, #menu > div > ul > li > div > ul li a{padding:4px 0; display:block; }
+#menu > div > ul > li > div > ul li a{font-size:12px;}
+#menu > div > ul > li.categories_hor > div > .column:hover > a{color:red;}
+#menu > div > ul > li.categories_hor > div > .column > div{display:block;}
+#menu > div > ul > li.categories_hor > div > .column:hover div{display:table; }
+#menu > div > ul > li.categories_hor > div > .column > div ul{display:table; padding:0;}
+#menu > div > ul > li.categories_hor > div > .column > div ul li + li{}
 
-#menu > ul > li ul + ul { padding-left: 20px; }
-#menu > ul > li ul > li > a {text-decoration:none; padding:4px; display:block; min-width: 150px;}
-#menu > ul > li div > ul > li > a {color:#222; }
-#menu > ul > li div > ul > li > a:hover {background:url(../image/bullet-1.png) right center no-repeat; color:#d45c93;}
+#menu > div > ul > li ul + ul { padding-left: 20px; }
+#menu > div > ul > li ul > li > a {text-decoration:none; padding:4px; display:block; min-width: 150px;}
+#menu > div > ul > li div > ul > li > a {color:#222; }
+#menu > div > ul > li div > ul > li > a:hover {background:url(../image/bullet-1.png) right center no-repeat; color:#d45c93;}
 
-#menu > ul > li.categories > div { display: none; background:#fff; min-width:160px; position:absolute; z-index:1008; padding:10px; border-top:2px solid #d45c93; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);}
 
-#menu > ul > li.categories > div > .column, #menu > ul > li > div > ul{position:relative;}
-#menu > ul > li.categories > div > .column + .column, #menu > ul > li > div > ul li + li{border-top:1px solid #eee;}
-#menu > ul > li.categories > div > .column a, #menu > ul > li > div > ul li a{font-size:13px; padding:7px 0; display:block;}
-#menu > ul > li.categories > div > .column:hover > a{color:#d45c93;}
-#menu > ul > li.categories > div > .column > div{display:none; position:absolute; border-top:2px solid #d45c93; background:#fff; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); z-index:1010; left:150px; top:0; padding:5px 10px;}
-#menu > ul > li.categories > div > .column:hover div{display:table; }
-#menu > ul > li.categories > div > .column:hover > div ul{display:table-cell; }
-#menu > ul > li.categories > div > .column:hover > div ul li + li{border-top:1px solid #eee;}
+#menu > div > ul > li.categories_hor:hover > div{display:block;}
+
 .custom_block p{line-height:18px; margin:0;}
 
 .breadcrumb { color: #c2c2c2; margin-bottom: 10px; text-align:center;}

@@ -1,0 +1,15 @@
+
+	{{#each menubar}}
+	<style>
+#mylink:hover {color:red;}
+</style>
+	
+	<a  href="#" style="font-weight:bold;font-size:14px;color:#fff;padding: 25px 15px 20px 20px;" id='mylink' >{{menu}}</a>
+	   <div style="display:none" id='{{menu}}'>
+              <ul>
+                <li><a href="#">{{menu}}</a></li>
+                <li><a href="#">{{menu}}</a></li>
+                <li><a href="#">{{menu}}</a></li>
+              </ul>
+           </div>
+	{{/each}}

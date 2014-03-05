@@ -1,13 +1,20 @@
-define([ 'jquery', 'backbone', 'marionette', 'underscore', 'handlebars'
-		], function($, Backbone, Marionette, _, Handlebars){
-
-	var Mystore = new Backbone.Marionette.Application();
+define(['marionette','commons/ui/dialog'],function(Marionette){
+	var Mystore = new Marionette.Application();
 
 	// app.root ='/';
 	Mystore.addRegions({
-		language : '#language',
-		currency : '#currency',
-		links	 : '#links'
+		wrapperbox : '.wrapper-box'
+		/*
+		language     : '#language',
+		currency     : '#currency',
+		links	     : '#links',
+		maincontent	 : '#maincontent',
+		message      : '#maincontent',
+		menu : '#menu',
+		dialogRegion: Marionette.Region.Dialog.extend({
+			      el: "#dialog-region"
+		})
+		*/
 	});
 
 	Mystore.navigate = function(route, options) {
@@ -18,15 +25,37 @@ define([ 'jquery', 'backbone', 'marionette', 'underscore', 'handlebars'
 	Mystore.getCurrentRoute = function() {
 		return Backbone.history.fragment
 	};
+	
+	Mystore.startSubApp = function(appName, args){
+	    var currentApp = appName ? Mystore.module(appName) : null;
+	    if (Mystore.currentApp === currentApp){ return; }
 
-	Mystore.on("initialize:after", function() {
-		
+	    if (Mystore.currentApp){
+	    	Mystorer.currentApp.stop();
+	    }
+
+	    Mystore.currentApp = currentApp;
+	    if(currentApp){
+	      currentApp.start(args);
+	    }
+	  };
+
+	  
+   Mystore.addInitializer(function (options) {
+	  
+   });
+   
+   
+   Mystore.on("initialize:after", function() {
+		//alert(MyAmd);
 		if (Backbone.history) {
-			Backbone.history.start();
-
-			//if (this.getCurrentRoute() === "") {
-			//	Mystore.trigger("contacts:list");
-			//}
+		require(["layout/content/login/login_app", "layout/content/about/about_app"], function () {
+				
+				Backbone.history.start();
+				if (Mystore.getCurrentRoute() === "") {
+				//Mystore.trigger("slide:show");
+				}
+		});
 		}
 	});
 	return Mystore

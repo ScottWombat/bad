@@ -59,7 +59,22 @@ $(".qtyBtn").click(function(){
 	});	
 
 /******** Menu Show Hide Sub Menu ********/
+
 $('#menu > ul > li').mouseover(function() {
+    alert('hhhh');
+	$screensize = $(window).width();
+	if ($screensize > 801) {							
+	$(this).find('> div').css('display', 'block');
+	$(this).bind('mouseleave', function() {
+		$(this).find('> div').css('display', 'none');
+										
+	});
+	}
+});
+
+
+$('#menu1 > ul > li').mouseover(function() {
+	
 			$(this).find('> div').css('display', 'block');
 			$(this).bind('mouseleave', function() {
 				$(this).find('> div').css('display', 'none');
@@ -69,6 +84,7 @@ $('#menu > ul > li').mouseover(function() {
 
 /******** Language and Currency Dropdowns ********/
 $('#currency, #language').mouseover(function() {
+	      alert('dl');
 			//$(this).find('> ul').slideDown('fast');
 	       $(this).find('> ul').stop(true,true).slideDown('fast');
 			$(this).bind('mouseleave', function() {
@@ -84,8 +100,13 @@ $('#currency, #language').mouseover(function() {
 		});
 	});
 	
+	$('#mylink').mouseover(function(){
+		alert('dddddd');
+	});
+	
 /******** Mega Menu **********/
 	$('#menu ul > li > a + div').each(function(index, element) {
+		alert('dddd');
 		// IE6 & IE7 Fixes
 		if ($.browser.msie && ($.browser.version == 7 || $.browser.version == 6)) {
 			var category = $(element).find('a');
