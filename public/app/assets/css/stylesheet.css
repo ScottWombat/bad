@@ -56,11 +56,25 @@ in-out; -moz-transition: all 0.8s ease-in-out; -o-transition: all 0.8s ease-in-o
 
 #language a:hover,#currency a:hover{color:#D45C93;}
 
-/********** Top Links **********/
-#header .links { position: relative; float:right; line-height:30px; margin-right:-10px;}
-#header .links a {display: inline-block; padding:0px 10px; color: #444;  text-decoration: none; font-size:12px; position:relative;}
-#header .links a + a:before{display:inline-block; content: "|"; clear: both; height: 0; color:#444; font-size:11px; padding-left:12px; position:absolute; left:-15px;}
-#header .links a:hover{color:#D45C93;}
+/********** Top Links *********
+#header .links div{ position: relative; float:left; line-height:30px; margin-right:-10px;}
+#header .links div a {display: inline-block; padding:0px 10px; color: #444;  text-decoration: none; font-size:12px; position:relative;}
+#header .links div a + div a:after{display:inline-block; content: "|"; clear: both; height: 0; color:#444; font-size:11px; padding-left:12px; position:absolute; left:-15px;}
+#header .links div a:hover{color:#D45C93;}
+*/
+
+#header .links div{ position: relative; float:left; line-height:30px; }
+
+/** #header .links  div  ul{display:none;}**/
+
+#header .htop .links #toplinks #wishlistRegion div  ul{display:none;}
+#header .htop .links #toplinks #wishlistRegion div  ul li{list-style: none;float: left; }
+#header .htop .links #toplinks #wishlistRegion div:hover ul{display:block;position:absolute;z-index:1014; width:270px;top:30px; left:0; background:#fff; box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25)}
+
+
+/**#mylinks1 a:hover ul.wishitems{display:block;}**/
+
+
 #header #welcome {color: #999999; float:left;}
 
 /********** Mini Cart  ***********/
@@ -69,9 +83,15 @@ in-out; -moz-transition: all 0.8s ease-in-out; -o-transition: all 0.8s ease-in-o
 #header #cart .heading h4 { background:#d45c93; width:32px; height:32px; float:left; margin:4px 0px 0 0; padding:0;  z-index:1012; position:relative;}
 #header #cart .heading a { text-decoration: none; font-size:14px; height:36px; color:#444; display:inline-block; background:#fff; z-index:1012; position:relative; padding:0 7px 0 2px;}
 #header #cart .heading a span { background:url('../image/bullet-d.png') right 11px no-repeat; padding-right: 12px; display:inline-block; margin-top:5px; }
-#header #cart .content { clear: both; display:none; position:absolute; padding:8px; min-height: 150px; z-index:1011; background: #FFF; width:350px; right:0; top:35px; box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25); -moz-box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25); -webkit-box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25);}
-#header #cart.active .heading{  box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25); }
-#header #cart.active .content { display: block; }
+
+#header #cart #mycart .content { clear: both; display:none; position:absolute; padding:8px; min-height: 150px; z-index:1011; background: #FFF; width:350px; right:0; top:35px; box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25); -moz-box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25); -webkit-box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25);}
+
+#header #cart #mycart.active .heading{  box-shadow:0 0 10px 0 rgba(0, 0, 0, 0.25); }
+#header #cart #mycart.active .content { display: block; }
+
+
+
+/**
 .mini-cart-info table { border-collapse: collapse; width: 100%; margin-bottom: 5px; }
 .mini-cart-info td { color: #000; vertical-align: top; padding: 10px 5px; border-bottom: 1px solid #EEEEEE; }
 .mini-cart-info .image { width: 1px; }
@@ -86,6 +106,8 @@ in-out; -moz-transition: all 0.8s ease-in-out; -o-transition: all 0.8s ease-in-o
 .mini-cart-total td { color: #000; padding:2px; }
 #header #cart .checkout {text-align: right; clear: both; line-height:normal; margin:0;}
 #header #cart .empty { padding-top: 50px; text-align: center; }
+
+**/
 
 /********** Search Bar **********/
 #header #search { position:absolute; top:35px; right:340px;}
@@ -139,7 +161,7 @@ in-out; -moz-transition: all 0.8s ease-in-out; -o-transition: all 0.8s ease-in-o
 #menu > div > ul > li.categories_hor > div > .column > a{font-weight:bold; font-size:13px; border-bottom:1px solid #ddd; margin-bottom:5px;}
 #menu > div > ul > li.categories_hor > div > .column a, #menu > div > ul > li > div > ul li a{padding:4px 0; display:block; }
 #menu > div > ul > li > div > ul li a{font-size:12px;}
-#menu > div > ul > li.categories_hor > div > .column:hover > a{color:red;}
+/*#menu > div > ul > li.categories_hor > div > .column:hover  a{color:red;}*/
 #menu > div > ul > li.categories_hor > div > .column > div{display:block;}
 #menu > div > ul > li.categories_hor > div > .column:hover div{display:table; }
 #menu > div > ul > li.categories_hor > div > .column > div ul{display:table; padding:0;}
@@ -151,9 +173,71 @@ in-out; -moz-transition: all 0.8s ease-in-out; -o-transition: all 0.8s ease-in-o
 #menu > div > ul > li div > ul > li > a:hover {background:url(../image/bullet-1.png) right center no-repeat; color:#d45c93;}
 
 
-#menu > div > ul > li.categories_hor:hover > div{display:block;}
+#menu > div > ul > li.categories_hor:hover > div{display:block;cursor:pointer;}
+
+#menu > div > ul > li.categories_hor > div >  .column > div > ul > li:hover {color:#d45c93;}
 
 .custom_block p{line-height:18px; margin:0;}
+
+/********** my **********/
+
+
+.ulWishlist{
+    list-style:none;
+    font-weight:bold;
+    margin-bottom:10px;
+    <span class="code-comment">/* Clear floats */</span>
+    float:left;
+    width:100%;
+   
+}
+.ulWishlist li{
+    float:left;
+    margin-right:10px;
+    position:relative;
+}
+.ulWishlist a{
+    display:block;
+    padding:5px;
+    color:#fff;
+    background:#333;
+    text-decoration:none;
+}
+.ulWishlist a:hover{
+    color:#fff;
+    background:#6b0c36;
+    text-decoration:underline;
+}
+
+
+.ulWishlist ul{
+    background:#fff; <span class="code-comment">/* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */</span>
+    background:rgba(255,255,255,0); <span class="code-comment">/* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */</span>
+    list-style:none;
+    position:absolute;
+    left:-9999px; <span class="code-comment">/* Hide off-screen when not needed (this is more accessible than display:none;) */</span>
+}
+.ulWishlist ul li{
+    padding-top:1px; <span class="code-comment">/* Introducing a padding between the li and the a give the illusion spaced items */</span>
+    float:none;
+}
+.ulWishlist ul a{
+    white-space:nowrap; <span class="code-comment">/* Stop text wrapping and creating multi-line dropdown items */</span>
+}
+.ulWishlist li:hover ul{ <span class="code-comment">/* Display the dropdown on hover */</span>
+    left:0; <span class="code-comment">/* Bring back on-screen when needed */</span>
+}
+.ulWishlist li:hover a{ <span class="code-comment">/* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */</span>
+    background:#6b0c36;
+    text-decoration:underline;
+}
+.ulWishlist li:hover ul a{ <span class="code-comment">/* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */</span>
+    text-decoration:none;
+}
+.ulWishlist li:hover ul li a:hover{ <span class="code-comment">/* Here we define the most explicit hover states--what happens when you hover each individual link. */</span>
+    background:#333;
+}
+/********** end my **********/
 
 .breadcrumb { color: #c2c2c2; margin-bottom: 10px; text-align:center;}
 .breadcrumb a { color:#999; font-size:11px;}

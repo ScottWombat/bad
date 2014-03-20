@@ -93,7 +93,8 @@ $('#currency, #language').mouseover(function() {
 		});
 
 /******** Ajax Cart **********/
-	$('#cart > .heading a').live('click', function() {
+	$('#cart > #mycart .heading a').live('click', function() {
+		alert('dddddd');
 		$('#cart').addClass('active');		
 		$('#cart').live('mouseleave', function() {
 			$(this).removeClass('active');
@@ -106,7 +107,7 @@ $('#currency, #language').mouseover(function() {
 	
 /******** Mega Menu **********/
 	$('#menu ul > li > a + div').each(function(index, element) {
-		alert('dddd');
+		
 		// IE6 & IE7 Fixes
 		if ($.browser.msie && ($.browser.version == 7 || $.browser.version == 6)) {
 			var category = $(element).find('a');

@@ -1,10 +1,13 @@
-define([ "application", "layout/content/login/show/login_view",'layout/header/links/list/menubar_view' ], function(
-		Mystore, View,UserSession,menuView) {
+define([ "application", "layout/content/login/show/login_view",'commons/ui/modalView'], function(
+		Mystore, View,ModalView) {
 
 	Mystore.module("LoginApp.Login", function(Login, Mystore, Backbone,Marionette, $, _) {
 		Login.Controller = {
-			showLogin : function() {
+			showLogin : function(model) {
+				//alert(model);
+				//console.info(model);
 				var view = new View.Form();
+				view.render();
 				view.on("form:submit", function(data) {
 					$.ajax({
 						url : REST_URL + 'user/authenticate',
@@ -18,17 +21,34 @@ define([ "application", "layout/content/login/show/login_view",'layout/header/li
 							if (data.error) { // If there is an error, show
 									// the error messages
 								$('.alert-error').text(data.error.text).show();
-							} else { // If not, send them back to the home
-										// page
-								//window.location.replace('#');
-								//UserSession.set({logged_in: true});
+							} else { 
+								//login success
+								//console.info(data.loggedIn );
+								//console.info('ddd');
+								//console.info(model);
+								model.set({
+									loggedIn : data.loggedIn
+									
+								});
+								model.set({
+								
+									loginMsg : data.loginMsg
+								});
+								/*
+								if(data.loggedIn){
+									model.set({
+									    loggedIn: true
+									});
+									
+								}else{
+									
+									Mystore.trigger("login:failed");
+								}
 								
 								
-								view.trigger("dialog:close");
-								//redirect to index page
-								APP.logged=true;
-								//alert(APP.logged);
+							
 								Mystore.navigate("");
+								*/
 								
 							}
 						},
@@ -36,24 +56,15 @@ define([ "application", "layout/content/login/show/login_view",'layout/header/li
 			                  alert('error; ' + eval(error));
 			             },
 						beforeSend : function(xhr) {
-							xhr.setRequestHeader("accept", "text/html");
-							//xhr.setRequestHeader("accept", "application/json");
+							//xhr.setRequestHeader("accept", "text/html");
+							xhr.setRequestHeader("accept", "application/json");
 							xhr.setRequestHeader("Content-Type","application/json");
 						}
 					});
-					
+					///data);
 				});
-				Mystore.dialogRegion.show(view);
 				
-			},
-			setActiveHeader: function(headerUrl){
-				alert('setActiveheader');
-		        //var links = ContactManager.request("header:entities");
-		       // var headerToSelect = links.find(function(header){ return header.get("url") === headerUrl; });
-		       // //headerToSelect.select();
-		       // links.trigger("reset");
-		     }
-
+			}
 		}
 	});
 

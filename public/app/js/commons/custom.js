@@ -1,7 +1,14 @@
 define([ "jquery", 'bootstrap' ], function($) {
 
+	
 	$(function() {
-		
+		$('body').on('click', 'a', function(){
+			alert('d');
+		});
+		$('#cart > #mycart > .heading ').on('click','a', function() {
+			alert('d');
+		});
+
 		// Tell jQuery to watch for any 401 or 403 errors and handle them appropriately
 		/*
 		$.ajaxSetup({

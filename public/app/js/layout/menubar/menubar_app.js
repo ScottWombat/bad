@@ -1,5 +1,13 @@
 define(["application", "layout/menubar/list/menubar_controller"], function(Mystore, ListController){
   Mystore.module("Menubar_Catalogues", function(Menubar, Mystore, Backbone, Marionette, $, _){
+	 
+	 var Router = Marionette.AppRouter.extend({
+		    appRoutes: {
+		      "about" : "showAbout"
+		    	  
+		    }
+    });
+	  
     var API = {
       listHeader: function(){
         ListController.listHeader();

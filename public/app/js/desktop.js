@@ -15,7 +15,6 @@ requirejs.config({
     	text                    : 'libs/text/text',
     	i18n					: 'libs/i18n/i18n',
     	traffiCop               : 'libs/trafficcop/TrafficeCop',
-    	//myamd					: 'api/myamd',
     	global			        : 'commons/global'
     	
     
@@ -32,11 +31,10 @@ requirejs.config({
         handlebars:{
             "exports":"Handlebars"
         },
-       // myamd : {
-       // 	exports : "myamd"
-       // },
         bootstrap:{
-        	 deps: ['jquery'] 
+        	 deps: ['jquery'] ,
+        	 "exports" : "bootstrap"
+        	
         },
         "jquery-ui": ["jquery"],
         'trafficCop' : ['trafficCop'],
@@ -45,13 +43,13 @@ requirejs.config({
         }
      },
     
-     deps : ['jquery','underscore','commons/dom'/'commons/cssLoader','commons/global','commons/authentication/session']
+     deps : ['jquery','jquery-ui','underscore','commons/dom'/'commons/cssLoader','commons/global','commons/authentication/session']
    
 });
 
 //require(['jquery','bootstrap','commons/custom'], function(){});
-require(['application',
-         'libs/trafficcop/TrafficCop',
+require(['application','jquery','bootstrap','commons/custom',
+        // 'libs/trafficcop/TrafficCop',
          'commons/handleBarsHelper',
         // 'layout/header/links/app_header',
         // 'layout/header/languages/app_header',

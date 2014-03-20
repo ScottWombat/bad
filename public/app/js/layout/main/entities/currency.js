@@ -40,7 +40,7 @@ define(["application",'localstorage'], function(Mystore){
            
            Entities.Collection.fetch(
         		   {success:function(){
-        			   console.info('fetching languages collection from locale storage');
+        			   console.info('fetching currencys collection from locale storage');
         		      console.info('collection size:'+Entities.Collection.length)
         		   },
         		   error:function(){

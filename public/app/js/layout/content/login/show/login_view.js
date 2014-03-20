@@ -1,9 +1,16 @@
-define(["application",'handlebars','text!templates/login_form.hbr','backbone.syphon'], function(Mystore,Handlebars,tpl){
+define(["application",'handlebars','utils/templateManager','commons/ui/modalView','backbone.syphon','bootstrap'], function(Mystore,Handlebars,TemplateManager,ModalView){
 	Mystore.module("LoginApp.Common.Views", function(Views, Mystore, Backbone, Marionette, $, _){
 	    Views.Form = Marionette.ItemView.extend({
-	    	template: Handlebars.compile(tpl), //TemplateManager.load(LOGIN_TEMPLATE),
-	    	//template: 'login_form',
+	    	//template: Handlebars.compile(tpl), 
+	    	template: TemplateManager.getLoginFormTemplate(),
 	    	title : 'Login',
+	    
+	    	initialize:function(){
+	    		
+	    		ModalView.Modal.apply(this);
+	    		
+	    		
+	    	},
 	    	events: {
 	    		"click button.js-submit": "submitClicked"
 	    	},
@@ -14,8 +21,12 @@ define(["application",'handlebars','text!templates/login_form.hbr','backbone.syp
 	    		var jsondata = JSON.stringify(data);
 
 	    		this.trigger("form:submit", jsondata);
+	    		
+	    		this.hideModal();
 	    	}
 	    });
+	    
+	   
 	 });
 	  return Mystore.LoginApp.Common.Views;
 	/*

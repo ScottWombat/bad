@@ -1,4 +1,6 @@
-define(["application", "layout/main/main_view",'layout/loading/loadingManager'], function(Mystore, View){
+define(["application", "layout/main/main_view",
+        "layout/content/products/products_view",'layout/loading/loadingManager'], 
+		function(Mystore, View,ProductLayout){
   Mystore.module("Main", function(Main, Mystore, Backbone, Marionette, $, _){
     Main.Controller = {
       listHeader: function(){
@@ -34,9 +36,14 @@ define(["application", "layout/main/main_view",'layout/loading/loadingManager'],
     	
      
       },
+      showProducts: function(id){
+    	 
+    	 var view = new ProductLayout.Layout({menuId: id});
+    	 Mystore.maincontent.show(view);
+      },
 
       setActiveHeader: function(headerUrl){
-        var links = Mystore.request("catalogues:entities");
+       // var links = Mystore.request("catalogues:entities");
        // var headerToSelect = links.find(function(header){ return header.get("url") === headerUrl; });
        // headerToSelect.select();
        // links.trigger("reset");

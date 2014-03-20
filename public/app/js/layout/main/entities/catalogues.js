@@ -35,7 +35,7 @@ define(["application",'localstorage'], function(Mystore){
            Entities.Collection = initializeHeaders();
            Entities.Collection.fetch(
         		   {success:function(){
-        			   console.info('fetching languages collection from locale storage');
+        			   console.info('fetching catalogues collection from locale storage');
         		      console.info('collection size:'+Entities.Collection.length)
         		   },
         		   error:function(){
